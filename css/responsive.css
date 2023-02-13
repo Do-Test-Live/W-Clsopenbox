@@ -1,0 +1,370 @@
+/*
+====================================
+large Screen - Others
+====================================
+*/
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+
+
+
+
+
+.form-area-inner {
+    padding-top: 100px;
+}
+
+/*=== spin page start ===*/
+
+.image-item-inner3 {
+    max-width: 550px;
+}
+
+.modal-content-inner h2 {
+    font-size: 50px;
+    line-height: 70px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/*
+====================================
+Small Screen - Tablate
+====================================
+*/
+@media screen and (min-width: 768px) and (max-width: 991px) {
+
+
+
+
+
+
+.image-item-inner ul li span {
+    font-size: 28px;
+}
+
+.image-item-inner ul li:last-of-type span {
+    margin-top: -30px;
+}
+
+.image-item-inner ul li:last-of-type img {
+    margin-top: -40px;
+}
+
+.image-item2 {
+    top: 20px;
+    left: 20px;
+    width: 400px;
+    height: 130px;
+}
+
+    .image-item3 {
+        top: 20px;
+        left: 20px;
+        width: 400px;
+        height: 130px;
+    }
+
+    .image-item4 {
+        top: 20px;
+        left: 20px;
+        width: 400px;
+        height: 130px;
+    }
+
+.image-item2-inner #countdown ul {
+    padding-right: 30px;
+    height: 130px;
+}
+
+.image-item2-inner #countdown ul li {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.image-item3 {
+    bottom: 20px;
+    right: 30px;
+    width: 200px;
+    height: 80px;
+    padding: 0 15px;
+}
+
+.control--button {
+    font-size: 22px;
+}
+
+.increment-group input {
+    font-size: 22px;
+}
+
+/*=== spin page start ===*/
+
+.image-item-inner3 {
+    max-width: 400px;
+}
+
+.modal-content-inner img {
+    max-width: 250px;
+}
+
+.modal-content-inner h2 {
+    font-size: 30px;
+    line-height: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/*
+====================================
+Small Screen - Mobile
+====================================
+*/
+@media screen and (max-width: 767px) {	
+
+
+
+.main-area {
+    padding: 48px 0;
+}
+
+.image-item {
+    min-height: calc(100vh - 96px);
+}
+
+.image-item-inner ul {
+    flex-wrap: wrap;
+}
+
+.image-item-inner ul li {
+	width: 100%;
+}
+
+.image-item-inner ul li img {
+	margin: 0 auto;
+}
+
+.image-item-inner ul li img:nth-of-type(1) {
+    display: none;
+}
+
+.image-item-inner ul li img:nth-of-type(2) {
+    display: block;
+}
+
+.image-item-inner ul li span {
+    font-size: 12px;
+    margin-top: -25px;
+}
+
+.image-item-inner ul li:nth-of-type(2) span {
+    margin-top: -20px;
+}
+
+.image-item-inner ul li:nth-of-type(2) div {
+	margin-left: auto;
+	max-width: 135px;
+	margin-right: -15px;
+}
+
+.image-item-inner ul li:nth-of-type(3) {
+	margin-top: -140px;
+}
+
+.image-item-inner ul li:nth-of-type(3) div {
+	margin-right: auto;
+	max-width: 135px;
+}
+
+.image-item-inner ul li:last-of-type span {
+    margin-top: -20px;
+}
+
+.image-item-inner ul li:last-of-type img {
+    margin-top: -0px;
+}
+
+.image-item2 {
+    top: 12px;
+    left: 4px;
+    width: 215px;
+    height: 64px;
+}
+
+    .image-item3 {
+        top: 12px;
+        left: 4px;
+        width: 215px;
+        height: 64px;
+    }
+    .image-item4 {
+        top: 530px;
+        left: -3px;
+        width: 215px;
+        height: 64px;
+    }
+
+
+.image-item2-inner #countdown ul {
+    padding-right: 20px;
+    height: 64px;
+}
+
+.image-item2-inner #countdown ul li {
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    margin-left: 10px;
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.image-item3 {
+    top: 27px;
+    right: auto;
+    left: 28%;
+    transform: translateX(-50%);
+    width: 215px;
+    height: 64px;
+    padding: 0 10px;
+}
+
+.control--button {
+    font-size: 16px;
+}
+
+.increment-group input {
+    font-size: 16px;
+}
+
+/*=== form-01 page start ===*/
+
+.form-area {
+    min-height: calc(100vh - 96px);
+    padding: 4px 5px;
+}
+
+.form-area-inner {
+}
+
+.form-area-inner2 {
+	display: block;
+}
+
+/*=== spin page start ===*/
+
+.image-item-inner3 {
+    max-width: 308px;
+    min-height: calc(100vh - 104px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content-inner {
+    padding: 92px 15px 45px;
+}
+
+.modal-content-inner img {
+    max-width: 231px;
+    display: block;
+    margin: 0 auto 32px;
+}
+
+.modal-content-inner h2 {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+/*=== information page start ===*/
+
+.information-item {
+    padding: 28px 20px;
+    min-height: calc(100vh - 96px);
+}
+
+.information-item-inner h2 {
+    font-size: 32px;
+    margin: 0 0 60px;
+}
+
+.information-item-inner ul li {
+    margin-bottom: 36px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
