@@ -135,14 +135,36 @@ button:focus {
 
 .image-item3 {
     position: fixed;
-    top: 20px;
-    left: 45px;
+    bottom: 66px;
+    right: 104px;
+    background-image: url(images/09.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    width: 258px;
+    height: 103px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+
+.image-item6 {
+    position: fixed;
+    top: 50px;
+    left: 50px;
     background-image: url(images/home-page.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
-    width: 300px;
-    height: 100px;
+    width: 258px;
+    height: 103px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
 }
 

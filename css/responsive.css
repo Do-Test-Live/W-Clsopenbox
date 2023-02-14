@@ -83,7 +83,8 @@ Small Screen - Tablate
     height: 130px;
 }
 
-    .image-item3 {
+
+    .image-item6 {
         top: 20px;
         left: 20px;
         width: 400px;
@@ -111,13 +112,13 @@ Small Screen - Tablate
     margin-top: 15px;
 }
 
-.image-item3 {
-    bottom: 20px;
-    right: 30px;
-    width: 200px;
-    height: 80px;
-    padding: 0 15px;
-}
+    .image-item6 {
+        bottom: 20px;
+        right: 30px;
+        width: 200px;
+        height: 80px;
+        padding: 0 15px;
+    }
 
 .control--button {
     font-size: 22px;
@@ -142,30 +143,6 @@ Small Screen - Tablate
     line-height: 50px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 /*
@@ -173,9 +150,17 @@ Small Screen - Tablate
 Small Screen - Mobile
 ====================================
 */
-@media screen and (max-width: 767px) {	
+@media screen and (max-width: 767px) {
 
-
+    .image-item3 {
+        bottom: 14px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 142px;
+        height: 55px;
+        padding: 0 10px;
+    }
 
 .main-area {
     padding: 48px 0;
@@ -244,7 +229,8 @@ Small Screen - Mobile
     height: 64px;
 }
 
-    .image-item3 {
+
+    .image-item6 {
         top: 12px;
         left: 4px;
         width: 215px;
@@ -272,16 +258,16 @@ Small Screen - Mobile
     margin-top: 5px;
 }
 
-.image-item3 {
-    top: 27px;
-    right: auto;
-    left: 28%;
-    transform: translateX(-50%);
-    width: 215px;
-    height: 64px;
-    padding: 0 10px;
-}
 
+    .image-item6 {
+        top: 27px;
+        right: auto;
+        left: 28%;
+        transform: translateX(-50%);
+        width: 215px;
+        height: 64px;
+        padding: 0 10px;
+    }
 .control--button {
     font-size: 16px;
 }
