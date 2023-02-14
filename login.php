@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
                 session_start();
                 $_SESSION["id"] = $row['id'];
                 $_SESSION["status"] = 'success';
-                header("Location: card_data.php");
+                header("Location: new.php");
             } else {
                 $result = 2;
             }

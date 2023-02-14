@@ -91,6 +91,13 @@ Small Screen - Tablate
         height: 130px;
     }
 
+    .image-item7 {
+        top: 20px;
+        left: 20px;
+        width: 400px;
+        height: 130px;
+    }
+
     .image-item4 {
         top: 20px;
         left: 20px;
@@ -113,6 +120,14 @@ Small Screen - Tablate
 }
 
     .image-item6 {
+        bottom: 20px;
+        right: 30px;
+        width: 200px;
+        height: 80px;
+        padding: 0 15px;
+    }
+
+    .image-item7 {
         bottom: 20px;
         right: 30px;
         width: 200px;
@@ -236,6 +251,13 @@ Small Screen - Mobile
         width: 215px;
         height: 64px;
     }
+
+    .image-item7 {
+        top: 12px;
+        left: 4px;
+        width: 215px;
+        height: 64px;
+    }
     .image-item4 {
         top: 530px;
         left: 162px;
@@ -266,6 +288,16 @@ Small Screen - Mobile
         transform: translateX(-50%);
         width: 215px;
         height: 64px;
+        padding: 0 10px;
+    }
+
+    .image-item7 {
+        top: 27px;
+        right: auto;
+        left: 21%;
+        transform: translateX(-50%);
+        width: 150px;
+        height: 40px;
         padding: 0 10px;
     }
 .control--button {

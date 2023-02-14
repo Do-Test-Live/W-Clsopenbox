@@ -1,7 +1,14 @@
 <?php
+
 session_start();
+
+$user_id = $_SESSION['id'];
+
+$status = $_GET['status'];
+
 // Include configuration file
 require_once 'config.php';
+
 ?>
 
 
@@ -30,10 +37,6 @@ require_once 'config.php';
     <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css"/>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css">
-
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 <body>
 
@@ -44,59 +47,79 @@ require_once 'config.php';
 
 <!-- main-area start -->
 <main class="main-area">
-    <div class="container-fluid">
-        <div class="form-area">
-            <div class="form-area-inner">
-                <div class="form-item">
-                    <h2>輸入資料</h2>
-                    <div class="form-item-inner5">
-                        <label>信用卡號</label>
-                        <input type="text" name=""/>
-                        <div class="form-area-inner6">
-                            <div class="form-area-inner7">
-                                <label>CVV</label>
-                                <input type="text" name=""/>
-                            </div>
-                            <div class="form-area-inner7">
-                                <label>過期日</label>
-                                <input type="text" name=""/>
-                            </div>
-                        </div>
-                        <label>姓名</label>
-                        <input type="text" name=""/>
-                        <button class="btn btn-primary stripe-button" id="payButton">
-                            <div class="spinner hidden" id="spinner"></div>
-                            <span id="buttonText">Pay Now</span>
-                        </button>
-                    </div>
+    <div class="container">
+        <div class="information-item">
+            <div class="row text-white text-center mt-sm-0 mt-5">
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+            </div>
+            <div class="row text-white text-center mt-sm-0 mt-3">
+                <div class="col-lg-4 col-md-4 col-4">
+                    <button class="btn stripe-button" id="payButton" style="background: url('images/buy.png'); height: 100px; width: 200px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <span id="buttonText"></span>
+                    </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <button class="btn stripe-button" id="payButton1" style="background: url('images/buy.png'); height: 100px; width: 200px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <span id="buttonText"></span>
+                    </button>
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <button class="btn stripe-button" id="payButton" style="background: url('images/buy.png'); height: 100px; width: 200px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                        <div class="spinner hidden" id="spinner"></div>
+                        <span id="buttonText"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="row text-white text-center mt-sm-0 mt-5">
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+            </div>
+            <div class="row text-white text-center mt-sm-0 mt-5">
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
+                </div>
+                <div class="col-lg-4 col-md-4 col-4">
+                    <img src="images/box.png" style="width: 250px;">
                 </div>
             </div>
         </div>
-        <div class="image-item2">
-            <div class="image-item2-inner">
-                <div id="countdown">
-                    <ul>
-                        <li><span id="days"></span></li>
-                        <li><span id="hours"></span></li>
-                        <li><span id="minutes"></span></li>
-                        <li><span id="seconds"></span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="image-item3">
-            <div class="increment-group js-increment-group">
-                <div class="increment-group__field">
-                    <button class="control--button increment-group__button js-increment-button" type="button"
-                            data-direction="inc"><span class="is-vhidden"></span><i class="fas fa-plus"></i></button>
-                    <input class="control control--text js-increment-input" type="text" pattern="d*"
-                           placeholder="Please enter" name="value" readonly="readonly" value="10"/></div>
-                <button class="control--button increment-group__button js-increment-button" type="button"
-                        data-direction="dec"><span class="is-vhidden"></span><i class="fas fa-minus"></i></button>
-            </div>
+    </div>
+    <div class="image-item6">
+        <div class="image-item2-inner">
+
         </div>
     </div>
+<?php
+if(isset($user_id)){
+    ?>
+    <div class="image-item4">
+        <div class="image-item2-inner">
+
+        </div>
     </div>
+    <?php
+}
+?>
 </main>
 <!-- main-area end -->
 
@@ -110,9 +133,25 @@ require_once 'config.php';
 
     // Select payment button
     const payBtn = document.querySelector("#payButton");
+    const payBtn1 = document.querySelector("#payButton1");
+
 
     // Payment request handler
     payBtn.addEventListener("click", function (evt) {
+        setLoading(true);
+
+        createCheckoutSession().then(function (data) {
+            if (data.sessionId) {
+                stripe.redirectToCheckout({
+                    sessionId: data.sessionId,
+                }).then(handleResult);
+            } else {
+                handleResult(data);
+            }
+        });
+    });
+
+    payBtn1.addEventListener("click", function (evt) {
         setLoading(true);
 
         createCheckoutSession().then(function (data) {
@@ -179,7 +218,6 @@ require_once 'config.php';
     }
 </script>
 
-
 <!-- Main jQuery -->
 <script src="js/jquery-3.4.1.min.js"></script>
 
@@ -192,8 +230,7 @@ require_once 'config.php';
 <!-- Fontawesome Script -->
 <script src="https://kit.fontawesome.com/7749c9f08a.js"></script>
 
-<!-- Custom jQuery -->
-<script src="js/scripts.js"></script>
+
 
 </body>
 </html>

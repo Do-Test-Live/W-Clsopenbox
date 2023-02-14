@@ -31,7 +31,7 @@ VALUES ('$username','$name','$Pwd_hashed','$address','$email','$phone')");
                 }
                 session_start();
                 $_SESSION['id'] = $id;
-                header('Location: card_data.php');
+                header('Location: new.php');
             }else{
                 $result = 2;
             }
