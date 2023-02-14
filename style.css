@@ -149,7 +149,7 @@ button:focus {
 .image-item4 {
     position: fixed;
     top: 818px;
-    left: 45px;
+    right: 50px;
     background-image: url(images/lucky-draw.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
