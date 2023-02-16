@@ -66,7 +66,9 @@ require_once 'config.php';
                                 <img src="images/3.png" style="width: 250px;">
                             </div>
                         </div>
-                        <div class="row text-white text-center mt-sm-0 mt-5">
+                    </div>
+                    <div class="carousel-item my-auto">
+                        <div class="row text-white text-center">
                             <div class="col-lg-4 col-md-4 col-4">
                                 <img src="images/4.png" style="width: 250px;">
                             </div>
@@ -78,8 +80,8 @@ require_once 'config.php';
                             </div>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row text-white text-center mt-sm-0 mt-5">
+                    <div class="carousel-item my-auto">
+                        <div class="row text-white text-center">
                             <div class="col-lg-4 col-md-4 col-4">
                                 <img src="images/7.png" style="width: 250px;">
                             </div>
@@ -104,7 +106,7 @@ require_once 'config.php';
             <div class="row mt-5 flex align-items-center justify-content-center">
                 <img src="images/box.png" style="max-width: 50%;">
             </div>
-            <div class="row flex align-items-center justify-content-center">
+            <div class="row flex align-items-center justify-content-center mt-3">
                 <button class="btn stripe-button" id="payButton" style="background: url('images/buy.png'); height: 50px; width: 100px; background-position: center; background-size: cover; background-repeat: no-repeat;">
                     <div class="spinner hidden" id="spinner"></div>
                     <span id="buttonText"></span>
@@ -163,11 +165,8 @@ if(isset($user_id)){
 
     // Create a Checkout Session with the selected product
     const createCheckoutSession = function (stripe) {
-        return fetch("payment_init.php", {
+        return fetch("payment_init.php?quantity=5", {
             method: "POST",
-            data: {
-                quantity: 5,
-            },
             headers: {
                 "Content-Type": "application/json",
             },

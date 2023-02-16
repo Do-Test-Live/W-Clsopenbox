@@ -1,9 +1,5 @@
 <?php
 $quantity = 1;
-if(isset($_POST['quantity'])){
-    $quantity = $_POST['quantity'];
-}
-
 // Include the configuration file 
 require_once 'config.php'; 
  
@@ -21,7 +17,9 @@ $response = array(
 ); 
  
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { 
-    $input = file_get_contents('php://input'); 
+    $input = file_get_contents('php://input');
+    $quantity = $_GET['quantity'];
+
     $request = json_decode($input);     
 } 
  
