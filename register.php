@@ -31,7 +31,7 @@ VALUES ('$username','$name','$Pwd_hashed','$address','$email','$phone')");
                 }
                 session_start();
                 $_SESSION['id'] = $id;
-                header('Location: new.php');
+                header('Location: slider.php');
             }else{
                 $result = 2;
             }

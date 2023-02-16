@@ -4,10 +4,10 @@ session_start();
 
 /*$user_id = $_SESSION['id'];
 
-$status = $_GET['status'];
+$status = $_GET['status'];*/
 
 // Include configuration file
-require_once 'config.php';*/
+require_once 'config.php';
 
 ?>
 
@@ -101,6 +101,15 @@ require_once 'config.php';*/
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            <div class="row mt-5 flex align-items-center justify-content-center">
+                <img src="images/box.png" style="max-width: 50%;">
+            </div>
+            <div class="row flex align-items-center justify-content-center">
+                <button class="btn stripe-button" id="payButton" style="background: url('images/buy.png'); height: 50px; width: 100px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                    <div class="spinner hidden" id="spinner"></div>
+                    <span id="buttonText"></span>
+                </button>
+            </div>
         </div>
     </div>
     <div class="image-item7">
@@ -108,6 +117,7 @@ require_once 'config.php';*/
 
         </div>
     </div>
+
     <?php
 if(isset($user_id)){
     ?>
@@ -126,31 +136,18 @@ if(isset($user_id)){
 
 <!-- Stripe JavaScript library -->
 <script src="https://js.stripe.com/v3/"></script>
+
 <script>
     // Set Stripe publishable key to initialize Stripe.js
     const stripe = Stripe('<?php echo STRIPE_PUBLISHABLE_KEY; ?>');
 
     // Select payment button
     const payBtn = document.querySelector("#payButton");
-    const payBtn1 = document.querySelector("#payButton1");
 
 
     // Payment request handler
     payBtn.addEventListener("click", function (evt) {
-        setLoading(true);
 
-        createCheckoutSession().then(function (data) {
-            if (data.sessionId) {
-                stripe.redirectToCheckout({
-                    sessionId: data.sessionId,
-                }).then(handleResult);
-            } else {
-                handleResult(data);
-            }
-        });
-    });
-
-    payBtn1.addEventListener("click", function (evt) {
         setLoading(true);
 
         createCheckoutSession().then(function (data) {
@@ -168,6 +165,9 @@ if(isset($user_id)){
     const createCheckoutSession = function (stripe) {
         return fetch("payment_init.php", {
             method: "POST",
+            data: {
+                quantity: 5,
+            },
             headers: {
                 "Content-Type": "application/json",
             },

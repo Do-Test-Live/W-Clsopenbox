@@ -14,7 +14,7 @@ if (isset($_POST['login'])) {
                 session_start();
                 $_SESSION["id"] = $row['id'];
                 $_SESSION["status"] = 'success';
-                header("Location: new.php");
+                header("Location: slider.php");
             } else {
                 $result = 2;
             }

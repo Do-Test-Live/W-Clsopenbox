@@ -1,5 +1,9 @@
-<?php 
- 
+<?php
+$quantity = 1;
+if(isset($_POST['quantity'])){
+    $quantity = $_POST['quantity'];
+}
+
 // Include the configuration file 
 require_once 'config.php'; 
  
@@ -29,7 +33,7 @@ if (json_last_error() !== JSON_ERROR_NONE) {
  
 if(!empty($request->createCheckoutSession)){ 
     // Convert product price to cent 
-    $stripeAmount = round($productPrice*100, 2); 
+    $stripeAmount = round($productPrice*100*$quantity, 2);
  
     // Create new Checkout Session for the order 
     try { 

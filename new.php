@@ -133,7 +133,6 @@ if(isset($user_id)){
 
     // Select payment button
     const payBtn = document.querySelector("#payButton");
-    const payBtn1 = document.querySelector("#payButton1");
 
 
     // Payment request handler
