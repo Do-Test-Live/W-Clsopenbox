@@ -95,7 +95,7 @@ if(!empty($_GET['session_id'])){
 
                         if($insert){
                             $payment_id = $stmt->insert_id;
-                            header('Location:new.php?status=true');
+                            header('Location:slider.php?payment_id='. $transactionID);
                         }
                     }
 

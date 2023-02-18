@@ -1,13 +1,12 @@
 <?php
-
+include('config/db_config.php');
 session_start();
 
-/*$user_id = $_SESSION['id'];
-
-$status = $_GET['status'];*/
-
-// Include configuration file
 require_once 'config.php';
+
+if (isset($_GET['payment_id'])) {
+    $payment_id = $_GET['payment_id'];
+}
 
 ?>
 
@@ -94,11 +93,13 @@ require_once 'config.php';
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
@@ -107,7 +108,8 @@ require_once 'config.php';
                 <img src="images/box.png" style="max-width: 50%;">
             </div>
             <div class="row flex align-items-center justify-content-center mt-3">
-                <button class="btn stripe-button" id="payButton" style="background: url('images/buy.png'); height: 50px; width: 100px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                <button class="btn stripe-button" id="payButton"
+                        style="background: url('images/buy.png'); height: 50px; width: 100px; background-position: center; background-size: cover; background-repeat: no-repeat;">
                     <div class="spinner hidden" id="spinner"></div>
                     <span id="buttonText"></span>
                 </button>
@@ -120,20 +122,118 @@ require_once 'config.php';
         </div>
     </div>
 
-    <?php
-if(isset($user_id)){
-    ?>
-    <div class="image-item4">
-        <div class="image-item2-inner">
 
+    <div class="image-item3">
+        <div class="increment-group js-increment-group">
+            <div class="increment-group__field">
+                <button class="control--button increment-group__button js-increment-button" type="button"
+                        data-direction="inc" id="increment-count"><span class="is-vhidden"></span><i
+                            class="fas fa-plus"></i></button>
+                <input class="control control--text js-increment-input" type="text" pattern="d*"
+                       name="value" readonly="readonly" id="count-text" value="0"/></div>
+            <button class="control--button increment-group__button js-increment-button" type="button"
+                    data-direction="dec" id="decrement-count"><span class="is-vhidden"></span><i
+                        class="fas fa-minus"></i></button>
         </div>
     </div>
-    <?php
-}
-?>
+
 </main>
 <!-- main-area end -->
 
+<?php
+if (isset($_GET['payment_id'])) {
+    $payment_id = $_GET['payment_id'];
+    ?>
+    <div class="modal fade show" style="display: inline-block;" id="modal">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-content-inner">
+                    <div class="row">
+
+
+                        <?php
+                        $fetch_amount = $con->query("select paid_amount from transactions where txn_id = '$payment_id' and payment_status='succeeded'");
+                        if ($fetch_amount) {
+                            while ($amount = mysqli_fetch_assoc($fetch_amount)) {
+                                $payment_amount = $amount['paid_amount'];
+                            }
+                        } else {
+                            echo 'something wrong';
+                        }
+                        $no_of_gift = $payment_amount / 500;
+
+                        $select_gift = $con->query("select * from products ORDER BY rand() limit $no_of_gift");
+                        if ($select_gift) {
+                            $gifts = '';
+                            while ($data = mysqli_fetch_assoc($select_gift)) {
+                                $gifts = $gifts . ',' . $data['product_id'];
+                                ?>
+                                <div class="col-4">
+                                    <img src="<?php echo $data['product_image']; ?>" alt="" style="max-width: 100px;"/>
+                                </div>
+                                <?php
+                            }
+                        } else {
+                            echo 'something wrong 2';
+                        }
+
+                        ?>
+
+                    </div>
+                    <div class="row flex align-items-center justify-content-center">
+                        <a href="insert_gift.php?payment_id=<?php echo $payment_id; ?>&gift=<?php echo $gifts; ?>">
+                            <button class="btn stripe-button" onclick="clam_button();"
+                                    style="background-color: #962222; height: 50px; width: 120px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                                <div class="spinner hidden"></div>
+                                <span style="color: white; font-weight:bold; font-size: 18px;">Clam Now</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal end -->
+    <?php
+}
+?>
+
+
+<script>
+    const total_count = document.getElementById("count-text");
+    var count = 1;
+    total_count.value = count;
+
+    // Function to increment count
+    document.getElementById("increment-count").addEventListener("click", function () {
+        count++;
+        if (count < 10) {
+            console.log(count);
+            total_count.value = count;
+            document.getElementById("decrement-count").disabled = false;
+        } else {
+            document.getElementById("increment-count").disabled = true;
+        }
+
+    });
+
+    // Function to decrement count
+    document.getElementById("decrement-count").addEventListener("click", function () {
+        if (count > 1) {
+            count--;
+            console.log(count);
+            total_count.value = count;
+            document.getElementById("increment-count").disabled = false;
+        } else {
+            document.getElementById("decrement-count").disabled = true;
+        }
+
+    });
+
+    function clam_button() {
+        document.getElementById('modal').classList.remove('show');
+    }
+</script>
 
 
 <!-- Stripe JavaScript library -->
@@ -165,7 +265,7 @@ if(isset($user_id)){
 
     // Create a Checkout Session with the selected product
     const createCheckoutSession = function (stripe) {
-        return fetch("payment_init.php?quantity=5", {
+        return fetch("payment_init.php?quantity=" + total_count.value, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -227,7 +327,6 @@ if(isset($user_id)){
 
 <!-- Fontawesome Script -->
 <script src="https://kit.fontawesome.com/7749c9f08a.js"></script>
-
 
 
 </body>

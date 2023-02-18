@@ -1,5 +1,5 @@
 <?php
-$quantity = 1;
+$quantity = $_GET['quantity'];
 // Include the configuration file 
 require_once 'config.php'; 
  
