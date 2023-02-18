@@ -5,7 +5,7 @@
 $productName = "Demo Product";
 $productID = "DP12345";
 $productPrice = 500;
-$currency = "usd";
+$currency = "hkd";
 
 /*
  * Stripe API configuration

@@ -108,8 +108,7 @@ if (isset($_GET['payment_id'])) {
                 <img src="images/box.png" style="max-width: 50%;">
             </div>
             <div class="row flex align-items-center justify-content-center mt-3">
-                <button class="btn stripe-button" id="payButton"
-                        style="background: url('images/buy.png'); height: 50px; width: 100px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                <button class="btn stripe-button buy-button" id="payButton">
                     <div class="spinner hidden" id="spinner"></div>
                     <span id="buttonText"></span>
                 </button>
@@ -180,12 +179,11 @@ if (isset($_GET['payment_id'])) {
                         ?>
 
                     </div>
-                    <div class="row flex align-items-center justify-content-center">
+                    <div class="row text-center">
                         <a href="insert_gift.php?payment_id=<?php echo $payment_id; ?>&gift=<?php echo $gifts; ?>">
-                            <button class="btn stripe-button" onclick="clam_button();"
-                                    style="background-color: #962222; height: 50px; width: 120px; background-position: center; background-size: cover; background-repeat: no-repeat;">
+                            <button class="btn stripe-button buy-button" onclick="clam_button();"
+                                    style="background-image: url('images/claim-now.png');">
                                 <div class="spinner hidden"></div>
-                                <span style="color: white; font-weight:bold; font-size: 18px;">Clam Now</span>
                             </button>
                         </a>
                     </div>

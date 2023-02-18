@@ -5227,6 +5227,7 @@ textarea.form-control-lg {
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  background: #000000ba;
 }
 
 .modal-dialog {

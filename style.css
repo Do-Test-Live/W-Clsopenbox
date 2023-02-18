@@ -440,7 +440,8 @@ button:focus {
 }
 
 .modal-content {
-    background: transparent;
+    background: rgb(33,150,243);
+    background: linear-gradient(104deg, rgba(44,38,74,0.7147233893557423) 49%, rgba(117,188,218,1) 100%);
     border: none;
 }
 
@@ -502,4 +503,20 @@ button:focus {
 
 .information-item-inner ul li:last-of-type {
     margin-bottom: 0;
+}
+
+.buy-button{
+    background: url('images/buy.png');
+    height: 50px;
+    width: 250px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 480px) {
+    .buy-button{
+        height: 46px;
+        width: 140px;
+    }
 }
