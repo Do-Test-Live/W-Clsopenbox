@@ -147,8 +147,7 @@ if (isset($_GET['payment_id'])) {
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-content-inner">
-                    <div class="row">
-
+                    <div class="row flex align-items-center justify-content-center">
 
                         <?php
                         $fetch_amount = $con->query("select paid_amount from transactions where txn_id = '$payment_id' and payment_status='succeeded'");
