@@ -60,7 +60,7 @@ require_once 'config.php';
                     <img src="images/box.png" style="width: 250px;">
                 </div>
             </div>
-            <div class="row text-white text-center mt-sm-0 mt-3">
+            <!--<div class="row text-white text-center mt-sm-0 mt-3">
                 <div class="col-lg-4 col-md-4 col-4">
                     <button class="btn stripe-button" id="payButton" style="background: url('images/buy.png'); height: 100px; width: 200px; background-position: center; background-size: cover; background-repeat: no-repeat;">
                         <div class="spinner hidden" id="spinner"></div>
@@ -79,7 +79,7 @@ require_once 'config.php';
                         <span id="buttonText"></span>
                     </button>
                 </div>
-            </div>
+            </div>-->
             <div class="row text-white text-center mt-sm-0 mt-5">
                 <div class="col-lg-4 col-md-4 col-4">
                     <img src="images/box.png" style="width: 250px;">
