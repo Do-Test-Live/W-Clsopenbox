@@ -1,0 +1,142 @@
+@font-face {
+    font-family: 'Orbitron-Bold';
+    src: url(../fonts/Orbitron-Bold.ttf);
+}
+
+
+.clsopenbox-header{
+    background-image: url("../images/background/2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.clsopenbox-body{
+    background-image: url("../images/background/3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -62px;
+}
+
+.closopenbox-card{
+    background: #3362CC4D;
+}
+
+.clsopenbox-card-image{
+    height: 150px;
+}
+
+.clsopenbox-primary{
+    font-family: 'Orbitron-Bold';
+    background: #40b4b4;
+    border: 1px solid #40b4b4;
+}
+
+.clsopenbox-primary:hover{
+    background: #40b4b4;
+    border: 1px solid #40b4b4;
+}
+
+.clsopenbox-primary:active{
+    background: #40b4b4 !important;
+    border: 1px solid #40b4b4 !important;
+}
+
+.clsopenbox-primary-2{
+    background: #00ffe4;
+    border: 1px solid #00ffe4;
+}
+
+.clsopenbox-warning{
+    font-family: 'Orbitron-Bold';
+    background: #f86b24;
+    border: 1px solid #f86b24;
+}
+
+.clsopenbox-warning:hover{
+    background: #f55201;
+    border: 1px solid #f55201;
+}
+
+.clsopenbox-warning:active{
+    background: #f55201 !important;
+    border: 1px solid #f55201 !important;
+}
+
+.splide__pagination{
+    bottom: -20px;
+}
+
+.clsopenbox-text-white{
+    font-family: 'Orbitron-Bold';
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.clsopenbox-text-primary{
+    font-family: Arial;
+    color: #00ffe4;
+}
+
+.header_button{
+    width: 120px;
+    background: transparent;
+    border: none;
+}
+
+.header_image{
+    width: 100px;
+}
+
+.header_section{
+    background: url("../images/new_page/circle-shape.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70px;
+}
+
+.featured_text{
+    font-family: 'Orbitron-Bold';
+    font-size: 16px;
+    color: #ffffff;
+}
+
+.second_section{
+    background-image: url("../images/new_page/top-box-.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.gift_image{
+    width: 100%;
+}
+
+.slider_background{
+    background-image: url("../images/new_page/bg-box-2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+
+.carousel-control-prev-icon{
+    border: 1px solid silver;
+    border-radius: 50%;
+}
+.carousel-control-next-icon{
+    border: 1px solid silver;
+    border-radius: 50%;
+}
+.footer-part{
+    background-color: #40b4b4;
+}
+
+.footer-text{
+    font-family: 'Orbitron-Bold';
+    font-size: 10px;
+    padding: 5px;
+}
+.carousel{
+    padding-top: 20px !important;
+}
+
