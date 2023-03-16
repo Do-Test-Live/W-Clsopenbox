@@ -193,7 +193,7 @@
                     <span id="seconds" class="time seconds">00</span>
                 </div>
                 <div class="time_text">
-                    <span id="milliseconds" class="time milliseconds">00</span>
+                    <span id="milliseconds" class="time milliseconds">0000</span>
                 </div>
             </div>
 
@@ -274,8 +274,11 @@
             if(!isPaused) {
                 milliseconds += 1;
 
-                if (milliseconds == 100) {
+                if (milliseconds % 100 == 0) {
                     seconds++;
+                }
+
+                if (milliseconds == 9999) {
                     milliseconds = 0;
                 }
 
@@ -283,7 +286,7 @@
                 secondsEl.textContent = formatTime(seconds);
             }
 
-        }, 10);
+        }, 20);
     }
 
     function pause() {
@@ -298,8 +301,7 @@
         seconds = 0;
         milliseconds = 0;
         secondsEl.textContent = '00';
-        millisecondsEl.textContent = '00';
-        /*btnResume.style.display = 'none';*/
+        millisecondsEl.textContent = '0000';
         btnPause.style.display = 'none';
         btnReset.style.display = 'none';
         btnPlay.style.display = 'block';
