@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <title>Clsopenbox</title>
+    <meta name="description" content="Clsopenbox">
+    <meta name="keywords" content="Clsopenbox">
+    <meta name="author" content="Clsopenbox">
+    <meta property="og:title" content="Clsopenbox"/>
+    <meta property="og:description" content="Clsopenbox"/>
+    <meta property="og:image" content="assets/images/background/2.png"/>
+
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+
+    <!--icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Bootstrap CSS -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Splide CSS -->
+    <link href="assets/vendor/splide/css/splide.min.css" rel="stylesheet">
+
+    <!-- Style CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("assets/images/background/3.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            list-style-type: none;
+            padding: 0;
+            width: 100%;
+            margin: 0px auto;
+            vertical-align: middle;
+        }
+
+        li {
+            display: inline;
+            vertical-align: middle;
+        }
+
+        li a {
+            vertical-align: middle;
+        }
+
+        li a img {
+            width: 30px;
+            vertical-align: middle;
+        }
+
+        /*stopwatch*/
+        .stopwatch {
+            width: 100%;
+            height: auto;
+            min-height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            position: relative;
+            color: white;
+        }
+
+
+        /*buttons div*/
+        .buttons {
+            display: flex;
+            width: 100%;
+            max-width: 250px;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .buttons .btn{
+            transition: all 0.3s ease-out;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .buttons .btn-green{
+            border-radius: 50%;
+            padding: 10px;
+            color: black;
+            background-color: white;
+            display: none;
+        }
+
+        .buttons .btn-reset {
+            position: absolute;
+            left: 4%;
+        }
+
+        .buttons .btn-check {
+            position: absolute;
+            right: 4%;
+        }
+
+
+        .buttons .btn-reset:hover,
+        .buttons .btn-reset:active
+        {
+            background-color: white;
+        }
+
+
+        .buttons .btn-blue{
+            border-radius: 50%;
+            padding: 25px;
+            color: black;
+            background-color: white;
+        }
+
+        .buttons .btn-blue:hover,
+        .buttons .btn-blue:active {
+            background-color: white;
+        }
+
+        .buttons .btn-pause{
+            border-radius: 30px;
+            width: 35%;
+        }
+
+        .btn-resume, .btn-pause, .btn-reset {
+            display: none;
+        }
+        .time_text{
+            font-size: 2.5rem;
+            padding: 10px;
+            font-family: 'Orbitron-Bold';
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar fixed-bottom navbar-expand-sm"
+     style="background: url('assets/images/navbar/rectangler.png'); background-size: cover;">
+    <ul style="margin-left: 20px; margin-right: 20px;">
+        <li class="my-auto">
+            <a href="#"><img src="assets/images/navbar/home-icon.png"> </a>
+        </li>
+        <li class="my-auto">
+            <a href="#"><img src="assets/images/navbar/magnifier.png"> </a>
+        </li>
+        <li class="my-auto">
+            <a href="#"><img src="assets/images/navbar/Add.png" style="width: 40px;"> </a>
+        </li>
+        <li class="my-auto">
+            <a href="#"><img src="assets/images/navbar/game-controller.png"> </a>
+        </li>
+        <li class="my-auto">
+            <a href="#"><img src="assets/images/navbar/Account.png"> </a>
+        </li>
+    </ul>
+</nav>
+
+<section class="container-fluid clsopenbox-header">
+    <div class="container-fluid container-lg">
+        <div class="row flex align-items-end justify-content-end">
+            <button class="header_button mt-5 float-right">
+                <img src="assets/images/new_page/button-header.png" class="header_image">
+            </button>
+        </div>
+        <div>
+            <img class="gift_image" src="assets/images/new_page/top-box.png" style="background: transparent;">
+        </div>
+    </div>
+</section>
+<div class="row container-fluid container-sm" style="height: 50px; background-color: #0b0e42; margin-top: -20px; margin-bottom: -20px;">
+</div>
+
+<div class="container ">
+    <div class="container slider_background flex align-items-center justify-content-center">
+        <section class="container">
+            <div class="stopwatch">
+                <div class="time_text">
+                    <span id="seconds" class="time seconds">00</span>
+                </div>
+                <div class="time_text">
+                    <span id="milliseconds" class="time milliseconds">00</span>
+                </div>
+            </div>
+
+            <div class="row flex align-items-center justify-content-center">
+                <div class="col-4">
+                    <button style="background-color: transparent; border: none;"><img
+                            src="images/play-icon.png" class="button_big btn-play"></button>
+                </div>
+                <div class="col-4">
+                    <button style="background-color: transparent; border: none;"><img
+                            src="images/reset-icon.png" class="button_big btn-reset"></button>
+                </div>
+                <div class="col-4">
+                    <button style="background-color: transparent; border: none;"><img
+                            src="images/pause-icon.png" class="button_big btn-pause"></button>
+                </div>
+            </div>
+            <!--<div class="buttons">
+                <button class="btn btn-green btn-reset"><i class="fas fa-solid fa-rotate-left"></i></button>
+                <button class="btn btn-blue btn-play"><i class="fas fa-solid fa-play"></i></button>
+                <button class="btn btn-blue btn-resume"><i class="fas fa-solid fa-play"></i></button>
+                <button class="btn btn-blue btn-pause"><i class="fas fa-solid fa-pause"></i></button>
+                &lt;!&ndash; <button class="btn btn-green btn-check"><i class="fas fa-solid fa-rotate-left"></i></button> &ndash;&gt;
+            </div>-->
+        </section>
+
+    </div>
+
+
+    <div class="row text-center footer-part" style="margin: 25px 0 30px 0 !important;">
+        <div class="col-1 col-sm-1 col-md-2 col-lg-2 my-auto text-center">
+            <img src="assets/images/new_page/gift-box.png" class="footer_section_image">
+        </div>
+        <div class="col-11 col-sm-11 col-md-10 col-lg-10 my-auto mt-3">
+            <p class="footer-text">Probability Description: A full set of 10 styles <span style="color: white">(10% chance for each style)</span>
+                + 3 hidden versions <span style="color: white">(1.49% chance for each style)</span></p>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+<!-- Splide JS -->
+<script src="assets/vendor/splide/js/splide.min.js"></script>
+
+<!-- Main JS -->
+<script src="assets/js/main.js"></script>
+
+<script>
+    let seconds = 0;
+    let milliseconds = 0;
+    let interval;
+    let isPaused = false;
+    const secondsEl = document.querySelector('#seconds');
+    const millisecondsEl = document.querySelector('#milliseconds');
+    const btnPlay = document.querySelector('.btn-play');
+    const btnPause = document.querySelector('.btn-pause');
+    const btnReset = document.querySelector('.btn-reset');
+    const btnCheck = document.querySelector('.btn-check');
+
+
+    //events
+    btnPlay.addEventListener('click', start);
+    btnPause.addEventListener('click', pause);
+    btnReset.addEventListener('click', reset);
+
+
+    //functions
+    function start() {
+        btnPlay.style.display = 'none';
+        btnPause.style.display = 'block';
+        btnReset.style.display = 'block';
+
+        interval = setInterval(() => {
+            if(!isPaused) {
+                milliseconds += 1;
+
+                if (milliseconds == 100) {
+                    seconds++;
+                    milliseconds = 0;
+                }
+
+                millisecondsEl.textContent = formatTime(milliseconds);
+                secondsEl.textContent = formatTime(seconds);
+            }
+
+        }, 10);
+    }
+
+    function pause() {
+        isPaused = true;
+        btnPause.style.display = 'none';
+    }
+
+
+    function reset() {
+        isPaused = true;
+        clearInterval(interval);
+        seconds = 0;
+        milliseconds = 0;
+        secondsEl.textContent = '00';
+        millisecondsEl.textContent = '00';
+        /*btnResume.style.display = 'none';*/
+        btnPause.style.display = 'none';
+        btnReset.style.display = 'none';
+        btnPlay.style.display = 'block';
+        isPaused = false;
+    }
+
+    function formatTime(time) {
+        return time < 10 ? `0${time}` : time;
+    }
+</script>
+</body>
+</html>
